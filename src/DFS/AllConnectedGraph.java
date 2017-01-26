@@ -3,7 +3,7 @@ package DFS;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Graph {
+public class AllConnectedGraph {
 	//depth first search for graph
 	//we search the node first, then search it's adjacent node
 	//then adjacent of the adjacent, like this.
@@ -11,7 +11,7 @@ public class Graph {
 	//go to previous step, search other node
 	private int V;
 	private LinkedList<Integer>[] adj;
-	public Graph(int v) {
+	public AllConnectedGraph(int v) {
 		// TODO Auto-generated constructor stub
 		V = v;
 		adj = new LinkedList[v];
@@ -44,12 +44,9 @@ public class Graph {
 		DFSUtil(v, visited);
 	}
 	public static void main(String[] args) {
-		Graph graph = new Graph(4);
-		graph.addEdge(0, 1);
+		AllConnectedGraph graph = new AllConnectedGraph(4);
 		graph.addEdge(1, 2);
-		graph.addEdge(2, 0);
 		graph.addEdge(2, 3);
-		graph.addEdge(3, 3);
 		graph.DFS(2);
 	}
 }
